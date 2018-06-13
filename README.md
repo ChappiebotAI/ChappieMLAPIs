@@ -2,17 +2,24 @@
 Chappie Machine Learning APIs
 
 # Name Entity Recognition
+
 API endpoint: https://f130s6e04g.execute-api.us-east-1.amazonaws.com/prod/v1/
+
 Method: POST
+
 Headers: 
   `x-api-key: ***`
+
 Body form-data
 
 ## Tagging
+
 API: `ml/tagging`
+
 Form-data:
   `sent`: string
   `request_id`: string (optional)
+
 Return:
  `[(token/tag), (token/tag), (token/tag), ...]`
   
@@ -26,7 +33,9 @@ curl
 ```
   
 ## Classify
+
 API: `ml/classify`
+
 Form-data:
   `sent`: string
   `request_id`: string (optional)
