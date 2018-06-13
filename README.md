@@ -27,7 +27,7 @@ CURL example:
 
 ```bash
 curl 
-  -d "sent=bán xe cũ mazda 3 đời 2017 chính chủ&request_id=12345" 
+  -d "sent=bán xe cũ Mazda 3 đời 2017 chính chủ&request_id=12345" 
   -H "x-api-key: ***" 
   -X POST https://f130s6e04g.execute-api.us-east-1.amazonaws.com/prod/v1/ml/tagging
 ```
@@ -47,7 +47,7 @@ CURL example:
 
 ```bash
 curl 
-  -d "sent=bán xe cũ mazda 3 đời 2017 chính chủ&request_id=12345" 
+  -d "sent=bán xe cũ Mazda 3 đời 2017 chính chủ&request_id=12345" 
   -H "x-api-key: ***" 
   -X POST https://f130s6e04g.execute-api.us-east-1.amazonaws.com/prod/v1/ml/classify
 ```
