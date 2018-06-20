@@ -3,9 +3,6 @@ Chappie Machine Learning APIs
 
 API endpoint: https://api.chappie.app/v1/
 
-
-# Name Entity Recognition
-
 Method: POST
 
 Headers: 
@@ -13,7 +10,7 @@ Headers:
 
 Body form-data
 
-## Tagging
+## Tagging (Name Entity Recognition)
 
 API: `ml/tagging`
 
