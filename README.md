@@ -53,7 +53,7 @@ curl
 ```
   
 ## API Pipelines
-You can call multiple api at the same time with only one invokecation.
+You can invoke multiple api at the same time with only one calling.
 
 API: `v1/pipelines`
 
