@@ -52,3 +52,20 @@ curl
   -X POST https://api.chappie.app/v1/ml/classify
 ```
   
+## API Pipelines
+You can call multiple api at the same time with only one invokecation.
+
+API: `v1/pipelines`
+
+Example: 
+```json
+[
+  ["ml/push", "Xe Cũ Land Rover Range Rover Autobiography LWB 2014", {"exclude": 1}],
+  ["ml/classify", {"sent": ":0", "readability": 1}],
+  ["ml/tagging", {"sent": ":0", "readability": 1}],
+  ["ml/tagging/entity", {"tagging": ":2", "readability": 1}],
+  ["ml/tagging/value", {"tagging": ":2", "readability": 1}]	
+]
+```
+
+  
