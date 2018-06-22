@@ -58,6 +58,17 @@ You can invoke multiple api at the same time with only one calling.
 API: `v1/pipelines`
 
 Example: 
+
+```json
+[
+  ["ml/push", "Xe Cũ Land Rover Range Rover Autobiography LWB 2014", {"exclude": 1}],
+  ["ml/tagging", {"sent": ":0", "readability": 1}],
+  ["ml/tagging/entity", {"tagging": ":1", "readability": 1}],
+  ["ml/tagging/value", {"tagging": ":1", "readability": 1}]	
+]
+```
+
+
 ```json
 [
   ["ml/push", "Xe Cũ Land Rover Range Rover Autobiography LWB 2014", {"exclude": 1}],
