@@ -63,8 +63,8 @@ Example:
 [
   ["ml/push", "Xe Cũ Land Rover Range Rover Autobiography LWB 2014", {"exclude": 1}],
   ["ml/tagging", {"sent": ":0", "readability": 1}],
-  ["ml/tagging/entity", {"tagging": ":1", "readability": 1}],
-  ["ml/tagging/value", {"tagging": ":1", "readability": 1}]	
+  ["ml/tagging/entity", ":1"],
+  ["ml/tagging/value", ":1"]	
 ]
 ```
 
@@ -74,8 +74,8 @@ Example:
   ["ml/push", "Xe Cũ Land Rover Range Rover Autobiography LWB 2014", {"exclude": 1}],
   ["ml/classify", {"sent": ":0", "readability": 1}],
   ["ml/tagging", {"sent": ":0", "readability": 1}],
-  ["ml/tagging/entity", {"tagging": ":2", "readability": 1}],
-  ["ml/tagging/value", {"tagging": ":2", "readability": 1}]	
+  ["ml/tagging/entity", ":2"],
+  ["ml/tagging/value", ":2"]	
 ]
 ```
 
