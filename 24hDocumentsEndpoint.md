@@ -14,25 +14,27 @@ Body form-data
 API: `documents/upload`
 
 Raw-data:
-  `json
+
+```json
   [
     {
-      'id': '123',
-      'type': 'add|delete',
-      'fields': {
-        'url': '...',
-        'title': '...',
-        'description': '...',
-        'source': '24h|eva',
-        'published_date': 'ISO Format',
-        'modified_date': 'ISO Format',
-        'html': 'article html content',
-        'text': 'article text content',
+      "id": "123",
+      "type": "add|delete",
+      "fields": {
+        "url": "...",
+        "title": "...",
+        "image": "image url (Max: 250x250)",
+        "description": "...",
+        "source": "24h|eva",
+        "published_date": "...",
+        "modified_date": "...",
+        "html": "article html content",
+        "text": "article text content",
       }
     },
     ...
   ]
-  `
+```
 
 Return:
  `{'status': 'success'}`
