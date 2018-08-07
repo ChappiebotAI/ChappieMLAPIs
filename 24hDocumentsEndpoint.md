@@ -25,7 +25,7 @@ Request payload as json format:
       "fields": {
         "url": "...",
         "title": "...",
-        "image": "image url (Max: 250x250)",
+        "image": "article's avatar image url",
         "description": "...",
         "source": "24h|eva",
         "published_date": "...",
