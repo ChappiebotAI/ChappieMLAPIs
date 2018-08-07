@@ -15,7 +15,7 @@ API: `documents/upload`
 
 Upload multi documents at time.
 
-Raw-data request:
+Request payload as json format:
 
 ```json
   [
