@@ -13,7 +13,9 @@ Body form-data
 
 API: `documents/upload`
 
-Raw-data:
+Upload multi documents at time.
+
+Raw-data request:
 
 ```json
   [
@@ -36,10 +38,9 @@ Raw-data:
   ]
 ```
 
-Return:
+Response:
  `{'status': 'success'}`
   
-
-  
+If `type` == `delete`, you set attribute `fields={}`.
 
   
