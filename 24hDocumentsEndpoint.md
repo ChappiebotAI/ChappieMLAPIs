@@ -29,9 +29,9 @@ Request payload as json format:
         "description": "...",
         "source": "24h|eva",
         "published_date": "...",
-        "modified_date": "...",
+        "modified_date": "... (optional)",
         "html": "article html content",
-        "text": "article text content",
+        "text": "article text content (optional)",
       }
     },
     ...
