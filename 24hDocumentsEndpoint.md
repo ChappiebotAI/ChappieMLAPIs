@@ -20,7 +20,7 @@ Request payload as json format:
 ```json
   [
     {
-      "id": "123",
+      "id": "123", (optional)
       "type": "add|delete",
       "fields": {
         "url": "...",
@@ -42,5 +42,19 @@ Response:
  `{'status': 'success'}`
   
 If `type` == `delete`, you set attribute `fields={}`.
+
+## Delete document with url
+
+```json
+  [
+    {
+      "type": "delete",
+      "fields": {
+        "url": "...",
+      }
+    },
+    ...
+  ]
+```
 
   
