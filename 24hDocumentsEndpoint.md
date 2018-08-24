@@ -27,7 +27,7 @@ Request payload as json format:
         "title": "...",
         "image": "article's avatar image url",
         "description": "...",
-        "source": "24h|eva",
+        "source": "www.24h.com.vn|eva.vn",
         "published_date": "...",
         "modified_date": "... (optional)",
         "html": "article html content",
