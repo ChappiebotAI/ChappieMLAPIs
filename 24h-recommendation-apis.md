@@ -13,7 +13,7 @@ Body form-data
 
 API: `related`
 
-Getrecommended items.
+Get recommended items.
 
 Params:
 
