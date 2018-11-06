@@ -57,7 +57,6 @@ $request->setRequestMethod('POST');
 $request->setBody($body);
 
 $request->setHeaders(array(
-  'cache-control' => 'no-cache',
   'x-api-key' => '***'
 ));
 
@@ -67,3 +66,23 @@ $response = $client->getResponse();
 echo $response->getBody();
 ```
   
+  
+### Python
+```python
+import requests
+
+url = "https://api.chappie.app/v1/related"
+
+headers = {
+    'x-api-key': "***",
+    }
+    
+payload = {
+  'client_id': 6,
+  'url': 'https://www.24h.com.vn/bong-da/ronaldinho-co-nguy-co-bi-truy-na-tai-khoan-chi-co-160000-dong-c48a1002950.html'
+}
+
+response = requests.request("POST", url, json=payload, headers=headers)
+
+print(response.json)
+```
