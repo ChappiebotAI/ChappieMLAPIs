@@ -18,7 +18,7 @@ Get recommended items.
 Params:
 
 ```
-client_id: <number> this application id have provided by Chappiebot. 
+client_id: <number> application id have provided by Chappiebot. 
 
 limit: maximum returning related's items
 
