@@ -43,6 +43,7 @@ Response:
       "score": <float number: 0 to 1>,
       "published_date": <date in ios format>,
       "images": [<list of images url>],
+      "image": "cover image"      
      },
      ...
     ],
@@ -54,10 +55,13 @@ Response:
       "media": "...",
       "source: "...",
       "published_date": <date in ios format>,
-      "image": "cover image",
-      
+      "image": "cover image"      
     },
     "entities": [ // list of entity extracted from document html
+      [
+        "entity title", 
+        "entity key"
+       ]
     ]
  }
  ```
