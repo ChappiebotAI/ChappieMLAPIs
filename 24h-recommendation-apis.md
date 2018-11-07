@@ -62,7 +62,7 @@ Response:
  }
  ```
  
-* Example response *
+**Example response**
 
 ```json
 {
