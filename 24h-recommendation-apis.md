@@ -20,13 +20,17 @@ Params:
 ```
 client_id: <number> application id have provided by Chappiebot. 
 
-limit: maximum returning related's items
+limit: maximum returning related's items (1 to 30)
 
 user_id: issued by application (facebook messenger, web...)
 
 document_id: (optional) hash string of url
 
 url: (24h or eva website url)
+
+utm_campaign: string append to delevery url
+
+ref: reference param append to delevery url
 ```
 
 Response:
@@ -38,6 +42,7 @@ Response:
       "title": "<document title>",
       "description": "<document description>",      
       "url": "<delivered url>",      
+      "origin_url": "<origin url>",      
       "media": "...",
       "source: "...",
       "score": <float number: 0 to 1>,
@@ -142,6 +147,49 @@ Response:
 }
 ```
  
+ 
+## Extraction
+
+API: `related`
+
+Document extraction
+
+Params:
+
+```
+client_id: <number> application id have provided by Chappiebot. 
+
+document_id: (optional) hash string of url
+
+url: (24h or eva website url)
+
+```
+
+Response:
+ ```
+ {
+    "tokens": [ // list of tokens  
+    ],
+    "entities": [ // list of entities       
+    ],
+    "topics": [ // list of topics
+    ],
+    "document": { // current document by url
+      "document_id": "<unique id with 11 chars>",
+      "title": "<document title>",
+      "description": "<document description>",      
+      "url": "<web url>",      
+      "media": "...",
+      "source: "...",
+      "published_date": <date in ios format>,
+      "image": "cover image"      
+    },
+    "best_entity": [
+        "Neymar Junior",
+        "Person"
+    ]
+}
+ ``` 
   
 
 ## Code Examples
@@ -160,7 +208,7 @@ $body->addForm(array(
   'url' => 'https://www.24h.com.vn/bong-da/vua-chuyen-nhuong-mbappe-phe-ngoi-neymar-cho-ronaldo-hit-khoi-c48a1002896.html'
 ), NULL);
 
-$request->setRequestUrl('https://api.chappie.app/v1/related');
+$request->setRequestUrl('https://api.chappie.app/v1/extraction');
 $request->setRequestMethod('POST');
 $request->setBody($body);
 
@@ -179,7 +227,7 @@ echo $response->getBody();
 ```python
 import requests
 
-url = "https://api.chappie.app/v1/related"
+url = "https://api.chappie.app/v1/extraction"
 
 headers = {
     'x-api-key': "***",
@@ -194,3 +242,141 @@ response = requests.request("POST", url, json=payload, headers=headers)
 
 print(response.json)
 ```
+
+**Example response**
+
+```json
+{
+    "tokens": [
+        "cầu thủ",
+        "thẩm định",
+        "siêu sao người",
+        "giải đấu",
+        "tiền đạo",
+        "màn trình diễn đỉnh cao",
+        "giá trị cao nhất thế giới bóng đá",
+        "giá trị cao nhất thế giới",
+        "bứt tốc",
+        "thi đấu chói sáng"
+    ],
+    "entities": [
+        [
+            "Neymar Junior",
+            "Neymar Junior/Person"
+        ],
+        [
+            "Harry Kane",
+            "Harry Kane/Person"
+        ],
+        [
+            "Mbappe",
+            "Mbappe/Person"
+        ],
+        [
+            "PSG",
+            "PSG/Organization"
+        ],
+        [
+            "Ronaldo",
+            "Ronaldo/Person"
+        ],
+        [
+            "CIES",
+            "CIES/Organization"
+        ],
+        [
+            "World Cup 2018",
+            "World Cup 2018/Event"
+        ],
+        [
+            "Messi",
+            "Messi/Person"
+        ]
+    ],
+    "topics": [
+        [
+            "Chuyển nhượng",
+            "D2-Chuyển nhượng"
+        ],
+        [
+            "Bóng đá",
+            "D1-Bóng đá"
+        ]
+    ],
+    "document": {
+        "description": "Kylian Mbappe vừa vượt qua hai siêu sao Neymar Junior và Harry Kane để trở thành cầu thủ được định giá có giá trị chuyển nhượng cao nhất thế giới bóng đá. Trong khi đó, Cristiano Ronaldo thậm chí không lọt vào top 10.",
+        "title": "Vua chuyển nhượng: Mbappe phế ngôi Neymar, cho Ronaldo hít khói",
+        "url": "https://www.24h.com.vn/bong-da/vua-chuyen-nhuong-mbappe-phe-ngoi-neymar-cho-ronaldo-hit-khoi-c48a1002896.html",
+        "image": "https://image.24h.com.vn/upload/4-2018/images/2018-11-06/64x0480-1541461117-617-width640height480.jpg",
+        "source": "www.24h.com.vn",
+        "published_date": "2018-11-06T19:01:00Z",
+        "document_id": "dg1wvw6r4kj"
+    },
+    "best_entity": [
+        "Neymar Junior",
+        "Person"
+    ]
+}
+```
+
+# 24h Documents Endpoint
+
+API endpoint: https://api.chappie.app/v1/
+
+Method: POST
+
+Headers: 
+  `x-api-key: ***`
+
+Body form-data
+
+## Upload Documents
+
+API: `documents/upload`
+
+Upload multi documents at time.
+
+Request payload as json format:
+
+```json
+  [
+    {
+      "id": "123", (optional)
+      "type": "add|delete",
+      "fields": {
+        "url": "...",
+        "title": "...",
+        "image": "article's avatar image url",
+        "description": "...",
+        "source": "www.24h.com.vn|eva.vn",
+        "published_date": "...",
+        "modified_date": "... (optional)",
+        "html": "article html content",
+        "text": "article text content (optional)",
+      }
+    },
+    ...
+  ]
+```
+
+Response:
+ `{'status': 'success'}`
+  
+If `type` == `delete`, you set attribute `fields={}`.
+
+## Delete document with url
+
+```json
+  [
+    {
+      "type": "delete",
+      "fields": {
+        "url": "...",
+      }
+    },
+    ...
+  ]
+```
+
+  
+
