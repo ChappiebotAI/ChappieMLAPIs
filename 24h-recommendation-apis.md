@@ -20,6 +20,8 @@ Params:
 ```
 client_id: <number> application id have provided by Chappiebot. 
 
+content_type: <article|video>
+
 limit: maximum returning related's items (1 to 30)
 
 user_id: issued by application (facebook messenger, web...)
