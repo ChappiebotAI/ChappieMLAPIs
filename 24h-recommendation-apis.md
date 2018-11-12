@@ -347,6 +347,7 @@ Request payload as json format:
         "url": "...",
         "title": "...",
         "image": "article's avatar image url",
+        "media": "video url (optional)",
         "description": "...",
         "source": "www.24h.com.vn|eva.vn",
         "published_date": "...",
