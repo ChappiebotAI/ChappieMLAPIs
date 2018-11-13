@@ -526,6 +526,8 @@ Request payload as json format:
   ]
 ```
 
+In case `media` field have more than one, you can appending multi urls by `***`. Example: `url1***url2***url3`
+
 Response:
  `{'status': 'success'}`
   
