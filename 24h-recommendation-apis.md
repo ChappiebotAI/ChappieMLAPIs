@@ -325,7 +325,7 @@ print(response.json)
 
 API: `entity_related`
 
-Document extraction
+List entity related by score
 
 Params:
 
