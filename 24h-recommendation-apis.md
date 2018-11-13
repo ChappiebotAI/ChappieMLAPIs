@@ -395,7 +395,7 @@ headers = {
     
 payload = {
   'client_id': 6,
-  'url': 'Neymar/Person'
+  'entity': 'Neymar/Person'
 }
 
 response = requests.request("POST", url, json=payload, headers=headers)
