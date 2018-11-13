@@ -152,7 +152,7 @@ Response:
  
 ## Extraction
 
-API: `related`
+API: `extraction`
 
 Document extraction
 
@@ -318,6 +318,169 @@ print(response.json)
         "Neymar Junior",
         "Person"
     ]
+}
+```
+
+## Entity Related
+
+API: `entity_related`
+
+Document extraction
+
+Params:
+
+```
+client_id: <number> application id have provided by Chappiebot. 
+
+entity: name/type
+
+```
+
+Response:
+ ```
+ {
+    "items": [
+        [
+            [
+                "PSG",
+                "Organization"
+            ],
+            0.5271084337349398
+        ],
+    ]
+}
+ ``` 
+  
+
+## Code Examples
+
+### PHP
+
+```php
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->addForm(array(
+  'client_id' => '6',
+  'entity' => 'Neymar/Person'
+), NULL);
+
+$request->setRequestUrl('https://api.chappie.app/v1/entity_related');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders(array(
+  'x-api-key' => '***'
+));
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();
+```
+  
+  
+### Python
+```python
+import requests
+
+url = "https://api.chappie.app/v1/entity_related"
+
+headers = {
+    'x-api-key': "***",
+    }
+    
+payload = {
+  'client_id': 6,
+  'url': 'Neymar/Person'
+}
+
+response = requests.request("POST", url, json=payload, headers=headers)
+
+print(response.json)
+```
+
+**Example response**
+
+```json
+{
+    "items": [
+        [
+            [
+                "PSG",
+                "Organization"
+            ],
+            0.5271084337349398
+        ],
+        [
+            [
+                "Ronaldo",
+                "Person"
+            ],
+            0.49698795180722893
+        ],
+        [
+            [
+                "Brazil",
+                "Organization"
+            ],
+            0.46686746987951805
+        ],
+        [
+            [
+                "Champions League",
+                "Event"
+            ],
+            0.4066265060240964
+        ],
+        [
+            [
+                "Real Madrid",
+                "Organization"
+            ],
+            0.4036144578313253
+        ],
+        [
+            [
+                "Messi",
+                "Person"
+            ],
+            0.3493975903614458
+        ],
+        [
+            [
+                "Cristiano Ronaldo",
+                "Person"
+            ],
+            0.3313253012048193
+        ],
+        [
+            [
+                "World Cup 2018",
+                "Event"
+            ],
+            0.32831325301204817
+        ],
+        [
+            [
+                "Mbappe",
+                "Person"
+            ],
+            0.3102409638554217
+        ],
+        [
+            [
+                "MU",
+                "Organization"
+            ],
+            0.3042168674698795
+        ]
+    ],
+    "_cost": 1.1828210353851318,
+    "request_id": "1"
 }
 ```
 
