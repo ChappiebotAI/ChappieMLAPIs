@@ -517,6 +517,7 @@ Request payload as json format:
         "description": "...",
         "source": "www.24h.com.vn|eva.vn",
         "published_date": "...",
+        "created_date": "...",
         "modified_date": "... (optional)",
         "html": "article html content",
         "text": "article text content (optional)",
