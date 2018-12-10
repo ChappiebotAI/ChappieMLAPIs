@@ -486,7 +486,7 @@ print(response.json)
 
 # 24h Documents Endpoint
 
-API endpoint: https://api.chappie.app/v1/
+API endpoint: https://hk6a36jrw3.execute-api.us-east-1.amazonaws.com/prod/
 
 Method: POST
 
