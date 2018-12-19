@@ -13,6 +13,7 @@ Request payload as json format:
         {
           "job_name": "lambda-tagger-job-12",
           "callback_url": "https://api.chappie.app/v1/callback_status",
+          "dataset_endpoint": "https://api.chappie.app/v1/ml/datasets/fetch",
           "training_image": "065056466896.dkr.ecr.us-east-1.amazonaws.com/chappieai-sagemaker:slot_tagger"
         }
         
