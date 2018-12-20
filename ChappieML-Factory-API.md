@@ -23,7 +23,41 @@ Request payload as json format:
             "Status": "Success! Training in process"
         }
         
- ### Response to callback_url
+ ### Request to callback_url
+ 
+ Endpoint: callback_url
+ 
+ Method: POST
+ 
+ Body form-data
+ 
+ Request payload as json format:
+ 
        {
           'model_path':'url_to_download_model'
        }
+
+
+## API to check training status
+
+Endpoint: https://d5r1if03rg.execute-api.us-east-1.amazonaws.com/prod
+
+Method: POST
+
+Headers: x-api-key: ***
+
+Body form-data
+
+Request payload as json format:
+```
+{
+  "job_name": "tagger-train-model-08"
+}
+```
+
+### Example response
+```
+{
+    "status": "InProgress"
+}
+```
