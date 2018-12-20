@@ -65,7 +65,7 @@ Response:
 
 API: `ml/train/callback`
 
-Fetch train samples.
+Post training job payloads to AI Factory.
 
 Params:
 
