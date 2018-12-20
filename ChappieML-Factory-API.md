@@ -12,11 +12,11 @@ Request payload as json format:
 
         {
           "job_name": "lambda-tagger-job-12",
-          "callback_url": "https://api.chappie.app/v1/callback_status",
+          "callback_url": "https://api.chappie.app/v1/ml/train/callback",
           "dataset_endpoint": "https://api.chappie.app/v1/ml/datasets/fetch",
           "training_image": "065056466896.dkr.ecr.us-east-1.amazonaws.com/chappieai-sagemaker:slot_tagger",
           "task_def": <ml_tagger|ml_topic>,
-          "creator": <user_id>
+          "creator": <user_id|user_name>
         }
         
 ### Example response
@@ -42,7 +42,7 @@ Request payload as json format:
         "job_name": "lambda-tagger-job-15",
         "model": "model_download_url",
         "task_def": <ml_tagger|ml_topic>,
-        "creator": <user_id>
+        "creator": <user_id|user_name>
        }
 
 
