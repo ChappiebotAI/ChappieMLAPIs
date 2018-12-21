@@ -50,7 +50,7 @@ Request payload as json format:
             "model.nHiddenGate":"50",
             "model.nHiddenTag":"50",
             "model.dropoutRate":"0.2",
-            "model.add_start_end_word":"True"
+            "model.add_start_end_words":"True"
          },
          "resource":{  
             "InstanceType":"ml.m4.4xlarge",
