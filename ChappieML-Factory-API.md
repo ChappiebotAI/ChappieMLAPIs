@@ -1,6 +1,6 @@
 ## ChappieML AI Factory API
 
-API endpoint: https://aa1fvz2tf6.execute-api.us-east-1.amazonaws.com/prod
+API endpoint: https://aa1fvz2tf6.execute-api.us-east-1.amazonaws.com/create_training_job
 
 Method: POST
 
@@ -9,21 +9,68 @@ Headers: x-api-key: ***
 Body form-data
 
 Request payload as json format:
+```
+   {  
+      "callback_url":{  
+         "url":"https://api.chappie.app/v1/ml/train/callback",
+         "headers":{  
+            "x-api-key":"***"
+         }
+      },
+      "dataset_endpoint":{  
+         "type":"fetch",
+         "url":"https://api.chappie.app/v1/ml/datasets/fetch",
+         "headers":{  
+            "x-api-key":"***"
+         },
+         "pagination":{  
+            "begin_offset":0,
+            "page_size":100,
+            "max_pages":0
+         }
+      },
+      "training_model":{  
+         "image":"***.dkr.ecr.us-east-1.amazonaws.com/chappieai-sagemaker:slot_tagger",
+         "hyperparameters":{  
+            "process.train.using_gpu":"True",
+            "process.train.initLearningRate":"0.2",
+            "process.train.decayLearningSteps":"500",
+            "process.train.decayRate":"0.95",
+            "process.train.saveCheckpointSteps":"200",
+            "process.train.keepCheckpointMax":"3",
+            "process.train.momentum":"0.9",
+            "process.train.steps":"400",
+            "process.train.batchsize":"128",
+            "process.eval.using_gpu":"True",
+            "process.eval.steps":"100",
+            "process.eval.batchsize":"15",
+            "model.numClasses":"-1",
+            "model.vocabSize":"-1",
+            "model.embeddingSize":"50",
+            "model.nHiddenGate":"50",
+            "model.nHiddenTag":"50",
+            "model.dropoutRate":"0.2",
+            "model.add_start_end_word":"True"
+         },
+         "resource":{  
+            "InstanceType":"ml.m4.4xlarge",
+            "InstanceCount":1,
+            "VolumeSizeInGB":5
+         }
+      },
+      "task_def":"ml_tagger",
+      "creator":"thaiph"
+   }
+```
 
-        {
-          "job_name": "lambda-tagger-job-12",
-          "callback_url": "https://api.chappie.app/v1/ml/train/callback",
-          "dataset_endpoint": "https://api.chappie.app/v1/ml/datasets/fetch",
-          "training_image": "065056466896.dkr.ecr.us-east-1.amazonaws.com/chappieai-sagemaker:slot_tagger",
-          "task_def": <ml_tagger|ml_topic>,
-          "creator": <user_id|user_name>
-        }
-        
 ### Example response
 
-        {
-            "Status": "Success! Training in process"
-        }
+```
+{
+    "status": "success",
+    "job_name": "sage-maker-train-20181221-030500"
+}
+```
         
  ### Request to callback_url
  
@@ -44,6 +91,60 @@ Request payload as json format:
         "task_def": <ml_tagger|ml_topic>,
         "creator": <user_id|user_name>
        }
+
+
+## API to get list training job
+
+Endpoint: https://aa1fvz2tf6.execute-api.us-east-1.amazonaws.com/check_trained_job
+
+Method: POST
+
+Headers: x-api-key: ***
+
+### Example response
+```
+[
+    {
+        "TrainingJobStatus": "InProgress",
+        "TrainingJobName": "sage-maker-train-20181220-162120",
+        "CreationTime": "2018-12-20 16:21:37"
+    },
+    {
+        "TrainingJobStatus": "Completed",
+        "TrainingJobName": "sage-maker-train-20181220-155655",
+        "CreationTime": "2018-12-20 15:57:12",
+        "TrainingEndTime": "2018-12-20 16:05:59"
+    }
+    ...
+]
+
+```
+
+## API to stop training job
+
+Endpoint: https://aa1fvz2tf6.execute-api.us-east-1.amazonaws.com/stop_training_job
+
+Method: POST
+
+Headers: x-api-key: ***
+
+Body form-data
+
+Request payload as json format:
+```
+{
+  "job_name": "tagger-train-model-08"
+}
+```
+
+### Example response
+```
+{
+    "status": "error",
+    "message": "An error occurred (ValidationException) when calling the StopTrainingJob operation: The request was rejected because the training job is in status Completed."
+}
+
+```
 
 
 ## API to check training status
