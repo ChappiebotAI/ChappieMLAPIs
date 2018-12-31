@@ -1,4 +1,6 @@
-## ChappieML AI Factory API
+# ChappieML AI Factory
+
+## API to create training job
 
 API endpoint: https://aa1fvz2tf6.execute-api.us-east-1.amazonaws.com/create_training_job
 
@@ -255,5 +257,80 @@ Request payload as json format:
 ```
 {
     "status": "InProgress"
+}
+```
+
+## Serving 
+
+### API process endpoint
+
+Endpoint: https://aba35xe1hk.execute-api.us-east-1.amazonaws.com/v1/endpoint
+
+Method: POST
+
+Headers: x-api-key: ***
+
+
+#### Create endpoint
+
+Body form-data
+
+Request payload as json format:
+```
+{
+  "endpoint": "serve-test01",
+  "type": "create"
+}
+```
+
+
+#### Get endpoint status 
+
+Body form-data
+
+Request payload as json format:
+
+```
+{
+  "endpoint": "serve-test01",
+  "type": "get_status"
+}
+```
+
+#### Delete endpoint
+
+Body form-data
+
+Request payload as json format:
+
+```
+{
+  "endpoint": "serve-test01",
+  "type": "delete"
+}
+```
+
+### API predict data
+
+Endpoint: https://aba35xe1hk.execute-api.us-east-1.amazonaws.com/v1/predict
+
+Method: POST
+
+Headers: x-api-key: ***
+
+Body form-data
+
+Request payload as json format:
+```
+{
+  "input": "what will you gain in next year?"
+}
+```
+
+Example response:
+```
+{
+    "body": "1010111010101010",
+    "statusCode": 200
 }
 ```
