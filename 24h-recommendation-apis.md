@@ -219,7 +219,7 @@ Params:
     	"source": "www.24h.com.vn|eva.vn"
     },
     {
-    	"url": ""
+    	"url": "..."
     }
 ]
 
