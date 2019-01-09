@@ -199,6 +199,40 @@ print(response.json)
     ]
 }
 ```
+
+## Batch Related
+
+API: `batch_related`
+
+Get recommended items by batch.
+
+Params:
+```json
+[
+    {
+    	"url": "...",
+    	"source": "www.24h.com.vn|eva.vn",
+    	"content_type": "video|article"
+    },
+    {
+    	"url": "...",
+    	"source": "www.24h.com.vn|eva.vn"
+    },
+    {
+    	"url": ""
+    }
+]
+
+```
+
+Response:
+```json
+{
+  "batch": [
+      {...}
+  ]
+}
+```
  
  
 ## Extraction
