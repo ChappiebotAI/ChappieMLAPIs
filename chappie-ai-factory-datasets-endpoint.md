@@ -46,7 +46,7 @@ Params:
 ```
 type: <tagger|topic> 
 
-fields: id, title (optional)
+fields: "id,name"
 
 ```
 
