@@ -1,4 +1,4 @@
-# 24h Recommendation APIs
+# 24h Recommendation System APIs
 
 API endpoint: https://api.chappie.app/v1/
 
