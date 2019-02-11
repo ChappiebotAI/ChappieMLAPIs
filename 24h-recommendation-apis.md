@@ -40,7 +40,7 @@ ref: reference param append to delevery url
  {
      "context": {
        "content_type": "article|video",
-       "souce": "www.24h.com.vn|eva.vn",
+       "source": "www.24h.com.vn|eva.vn",
        "limit": : 5,
        "generated_date": "2019-02-11T10:00:00Z"
     },
@@ -136,7 +136,7 @@ print(response.json)
 {
     "context": {
        "content_type": "article",
-       "souce": "www.24h.com.vn",
+       "source": "www.24h.com.vn",
        "limit": : "5",
        "generated_date": "2019-02-11T10:00:00Z"
     },
