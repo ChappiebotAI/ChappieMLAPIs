@@ -15,7 +15,7 @@ API: `related`
 
 Get recommended items.
 
-***Params***:
+#### Params:
 
 ```
 client_id: <number> application id have provided by Chappiebot. 
@@ -35,7 +35,7 @@ utm_campaign: string append to delevery url
 ref: reference param append to delevery url
 ```
 
-***Response***:
+#### Response:
  ```
  {
      "context": {
