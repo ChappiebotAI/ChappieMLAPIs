@@ -41,7 +41,7 @@ ref: reference param append to delevery url
      "context": {
        "content_type": "article|video",
        "source": "www.24h.com.vn|eva.vn",
-       "limit": : 5,
+       "limit": 5,
        "generated_date": "2019-02-11T10:00:00Z"
     },
     "items": [ // list of related documents with current document
@@ -137,7 +137,7 @@ print(response.json)
     "context": {
        "content_type": "article",
        "source": "www.24h.com.vn",
-       "limit": : "5",
+       "limit": "5",
        "generated_date": "2019-02-11T10:00:00Z"
     },
     "items": [
