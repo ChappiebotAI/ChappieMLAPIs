@@ -36,7 +36,7 @@ ref: reference param append to delevery url
 ```
 
 Response:
- ```json
+ ```
  {
      "context": {
        "content_type": "article|video",
