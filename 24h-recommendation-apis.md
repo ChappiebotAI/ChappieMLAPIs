@@ -128,6 +128,12 @@ print(response.json)
 
 ```json
 {
+    "context": {
+       "content_type": "article|video",
+       "souce": "www.24h.com.vn|eva.vn",
+       "limit": : 5,
+       "generated_date": "2019-02-11T10:00:00Z"
+    },
     "items": [
         {
             "description": "Romelu Lukaku bị HLV Jose Mourinho đày ải trên băng ghế dự bị ở trận thắng Everton mới đây. Và một lần nữa “Voi rừng đệ nhị” lại bị các CĐV MU chỉ trích thậm tệ.",
