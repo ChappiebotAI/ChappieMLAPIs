@@ -601,27 +601,29 @@ Upload multi documents at time.
 Request payload as json format:
 
 ```json
-  [
-    {
-      "id": "123", (optional)
-      "type": "add|delete",
-      "fields": {
-        "url": "...",
-        "title": "...",
-        "image": "article's avatar image url",
-        "content_type": "article|video|pr|ad",
-        "media": "video url (optional)",
-        "description": "...",
-        "source": "www.24h.com.vn|eva.vn",
-        "published_date": "...",
-        "created_date": "...",
-        "modified_date": "... (optional)",
-        "html": "article html content",
-        "text": "article text content (optional)",
-      }
-    },
-    ...
-  ]
+  {
+    "items": [
+      {
+        "id": "123", (optional)
+        "type": "add|delete",
+        "fields": {
+          "url": "...",
+          "title": "...",
+          "image": "article's avatar image url",
+          "content_type": "article|video|pr|ad",
+          "media": "video url (optional)",
+          "description": "...",
+          "source": "www.24h.com.vn|eva.vn",
+          "published_date": "...",
+          "created_date": "...",
+          "modified_date": "... (optional)",
+          "html": "article html content",
+          "text": "article text content (optional)",
+        }
+      },
+      ...
+    ]
+  }
 ```
 
 In case `media` field have more than one, you can appending multi urls by `***`. Example: `url1***url2***url3`
@@ -634,15 +636,17 @@ If `type` == `delete`, you set attribute `fields={}`.
 ## Delete document with url
 
 ```json
-  [
-    {
-      "type": "delete",
-      "fields": {
-        "url": "...",
-      }
-    },
-    ...
-  ]
+  {
+    "items": [
+      {
+        "type": "delete",
+        "fields": {
+          "url": "...",
+        }
+      },
+      ...
+    ]
+  }
 ```
 
   
